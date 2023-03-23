@@ -5,14 +5,14 @@ import 'package:grock/grock.dart';
 import 'package:storage_example/models/my_models.dart';
 import 'package:storage_example/services/shared_pref_service.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class SharedPreferenceScreen extends StatefulWidget {
+  const SharedPreferenceScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<SharedPreferenceScreen> createState() => _SharedPreferenceScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _SharedPreferenceScreenState extends State<SharedPreferenceScreen> {
   var selectedGender = Gender.KADIN;
   var isStudent = false;
   List<String> selectedColors = [];

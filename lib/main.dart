@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grock/grock.dart';
-import 'package:storage_example/screens/home_screen.dart';
+import 'package:storage_example/screens/secure_storage_screen.dart';
+import 'package:storage_example/screens/shared_preference_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -39,13 +40,36 @@ class MainScreen extends StatelessWidget {
       appBar: const CupertinoNavigationBar(
         middle: Text("Welcome My App"),
       ),
-      body: Center(
-        child: OutlinedButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomeScreen()));
-            },
-            child: const Text("Shared Preferences Kullanımı")),
+      body: Padding(
+        padding: 20.allP,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              OutlinedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const SharedPreferenceScreen()));
+                  },
+                  child: const Text("Shared Preferences Kullanımı")),
+              const Divider(
+                thickness: 10,
+              ),
+              OutlinedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SecureStorageScreen()));
+                  },
+                  child: const Text("Secure Storage Kullanımı")),
+            ],
+          ),
+        ),
       ),
     );
   }
